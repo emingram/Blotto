@@ -5,9 +5,9 @@ def BlottoGame (strat1, strat2, n):
     assert len(strat1) == len(strat2)   #make sure strats are the same length
 
     for i in range(n):  #check each field and assign scores
-        if strat1[i] > i*strat2[i]:     #for player to win they must have spent more than i times resources of opponent
+        if (strat1[i] > (i+1)*strat2[i]):     #for player to win they must have spent more than i times resources of opponent
             p1score += 1.0
-        elif strat2[i] > i*strat1[i]:
+        elif (strat2[i] > (i+1)*strat1[i]):
             p2score += 1.0
 
     return p1score      #return the score of the first strategy vector
