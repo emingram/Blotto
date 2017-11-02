@@ -9,6 +9,15 @@ def RandoStrat (init, n):
         strat.append(rand)
         res -= rand         #reduce reserves by this number
     strat.append(rand)      #add this to the strategy vector
-    random.shuffle(strat)   #shuffle the strategy vector
+    np.random.shuffle(strat)   #shuffle the strategy vector
     return strat
+
+def RandoDist (init, n):
+    #creates a strategy that adds 5 units of resources to a random district
+    strat = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    while sum(strat)<init:
+        dist = np.random.randint(0, n)  #choose a district randomly
+        strat[dist] += 5    #add 5 resources to that district
+    return strat
+
 
