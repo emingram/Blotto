@@ -1,3 +1,5 @@
+import numpy as np
+
 def RandoStrat (init, n):
     #create a single random integer-valued strategy that sums to init with length n
     res = init      #create a temporary resource variable
