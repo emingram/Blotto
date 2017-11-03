@@ -1,6 +1,6 @@
 import numpy as np
 
-def RandoStrat (init, n):
+def RandoStrat (init, n): #this function makes very skew distributions
     #create a single random integer-valued strategy that sums to init with length n
     res = init      #create a temporary resource variable
     strat = []      #empty list
@@ -12,12 +12,12 @@ def RandoStrat (init, n):
     np.random.shuffle(strat)   #shuffle the strategy vector
     return strat
 
-def RandoDist (init, n):
-    #creates a strategy that adds 5 units of resources to a random district
+def RandoDist (init, n, x): #this function makes very uniform distributions
+    #creates a strategy that adds x units of resources to a random district
     strat = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     while sum(strat)<init:
         dist = np.random.randint(0, n)  #choose a district randomly
-        strat[dist] += 5    #add 5 resources to that district
+        strat[dist] += x    #add 5 resources to that district
     return strat
 
 
